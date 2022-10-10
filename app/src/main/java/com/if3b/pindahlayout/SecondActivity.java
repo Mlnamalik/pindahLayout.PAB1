@@ -2,12 +2,13 @@ package com.if3b.pindahlayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class SecondActivity extends AppCompatActivity {
-
-    EditText tvNama;
+    TextView tvNama;
     String nama;
 
     @Override
@@ -18,6 +19,12 @@ public class SecondActivity extends AppCompatActivity {
 
 
         getSupportActionBar().setTitle("Layout B");
+
+        tvNama = findViewById(R.id.tv_nama);
+
+        Intent terima = getIntent();
+        String yNama = terima.getStringExtra("xNama");
+        tvNama.setText(yNama);
 
     }
 }
